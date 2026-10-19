@@ -13,3 +13,13 @@ public class recursion2{
         henoi(n, "S", "H", "D");
     }
 }
+
+
+
+
+
+
+
+
+
+
