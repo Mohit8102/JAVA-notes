@@ -48,4 +48,44 @@ public class recursion2{
 //     String str = "aabbbcccdddaannn";
 //     findOccerence(str, 0, 'a');
 // }
+//----------------------------------------------------------------------------------------------------------------------
+// public static boolean isShorted(int arr[], int index){
+//     if(index == arr.length-1){
+//         return true;
+//     }
+//     if(arr[index] < arr[index+1]){
+//         return isShorted(arr, index+1);
+//     }else{
+//         return false;
+//     }
+// }
+// public static void main(String args[]){
+//     int arr[] = {1,2,3,4,5,6,7};
+//     boolean ans = isShorted(arr, 0);
+//     System.out.println(ans);
+// }
+//----------------------------------------------------------------------------------------------------------------------
+public static int count = 0;
+public static void move(String str, int index ,char element, String newString){
+    if(index == str.length()){
+        for(int i=0; i<count; i++){
+            newString += element;
+        }
+        System.out.println(newString);
+        return;
+    };
+    char character = str.charAt(index);
+    if(character == element){
+        count++;
+        move(str, index+1, element, newString);
+    }else{
+        newString += character;
+        move(str, index+1, element, newString);
+    }
+    
+}
+public static void main(String arg[]){
+    String str = "mxoxhxixt";
+    move(str, 0, 'x',"");
+}
 }
