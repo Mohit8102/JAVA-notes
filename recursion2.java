@@ -13,18 +13,39 @@ public class recursion2{
 //     henoi(n, "S", "H", "D");
 // }
 //----------------------------------------------------------------------------------------------------------------------
-public static void reversestr(String str, int index){
-    if(index == 0){
-        System.out.print(str.charAt(index));
+// public static void reversestr(String str, int index){
+//     if(index == 0){
+//         System.out.print(str.charAt(index));
+//         return;
+//     }
+//     System.out.print(str.charAt(index));
+//     reversestr(str, index-1);
+// }
+// public static void main(String arg[]){
+//     String str = "mohit";
+//     reversestr(str, str.length()-1);
+// }
+//----------------------------------------------------------------------------------------------------------------------
+public static int first = -1;
+public static int last = -1;
+public static void findOccerence(String str, int index, char element){
+    if(index == str.length()-1){
+        System.out.println(first);
+        System.out.println(last);
         return;
     }
-    System.out.print(str.charAt(index));
-    reversestr(str, index-1);
+    char character = str.charAt(index);
+    if(character == element){
+        if(first == -1){
+            first = index;
+        }else{
+            last = index;
+        }
+    }
+    findOccerence(str, index+1, element);
 }
-public static void main(String arg[]){
-    String str = "mohit";
-    reversestr(str, str.length()-1);
+public static void main(String args[]){
+    String str = "aabbbcccdddaannn";
+    findOccerence(str, 0, 'a');
 }
-
-
 }
