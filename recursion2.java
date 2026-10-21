@@ -26,26 +26,26 @@ public class recursion2{
 //     reversestr(str, str.length()-1);
 // }
 //----------------------------------------------------------------------------------------------------------------------
-public static int first = -1;
-public static int last = -1;
-public static void findOccerence(String str, int index, char element){
-    if(index == str.length()-1){
-        System.out.println(first);
-        System.out.println(last);
-        return;
-    }
-    char character = str.charAt(index);
-    if(character == element){
-        if(first == -1){
-            first = index;
-        }else{
-            last = index;
-        }
-    }
-    findOccerence(str, index+1, element);
-}
-public static void main(String args[]){
-    String str = "aabbbcccdddaannn";
-    findOccerence(str, 0, 'a');
-}
+// public static int first = -1;
+// public static int last = -1;
+// public static void findOccerence(String str, int index, char element){
+//     if(index == str.length()-1){
+//         System.out.println(first);
+//         System.out.println(last);
+//         return;
+//     }
+//     char character = str.charAt(index);
+//     if(character == element){
+//         if(first == -1){
+//             first = index;
+//         }else{
+//             last = index;
+//         }
+//     }
+//     findOccerence(str, index+1, element);
+// }
+// public static void main(String args[]){
+//     String str = "aabbbcccdddaannn";
+//     findOccerence(str, 0, 'a');
+// }
 }
