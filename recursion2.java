@@ -65,27 +65,61 @@ public class recursion2{
 //     System.out.println(ans);
 // }
 //----------------------------------------------------------------------------------------------------------------------
-public static int count = 0;
-public static void move(String str, int index ,char element, String newString){
+// public static int count = 0;
+// public static void move(String str, int index ,char element, String newString){
+//     if(index == str.length()){
+//         for(int i=0; i<count; i++){
+//             newString += element;
+//         }
+//         System.out.println(newString);
+//         return;
+//     };
+//     char character = str.charAt(index);
+//     if(character == element){
+//         count++;
+//         move(str, index+1, element, newString);
+//     }else{
+//         newString += character;
+//         move(str, index+1, element, newString);
+//     }
+    
+// }
+// public static void main(String arg[]){
+//     String str = "mxoxhxixt";
+//     move(str, 0, 'x',"");
+// }
+//----------------------------------------------------------------------------------------------------------------------
+// public static boolean[] map = new boolean[26];
+// public static void remove(String str, int index,String newString){
+//     if(index == str.length()){
+//         System.out.println(newString);
+//         return;
+//     }
+//     char currChar = str.charAt(index);
+//     if(map[currChar-'a'] == true){
+//         remove(str, index+1, newString);
+//     }else{
+//         newString += currChar;
+//         map[currChar-'a'] = true;
+//         remove(str, index+1, newString);
+//     }
+// }
+// public static void main(String args[]){
+//     String str = "mohitkumar";
+//     remove(str, 0, "");
+// }
+//----------------------------------------------------------------------------------------------------------------------
+public static void subSequences(String str, int index, String newString){
     if(index == str.length()){
-        for(int i=0; i<count; i++){
-            newString += element;
-        }
         System.out.println(newString);
         return;
-    };
-    char character = str.charAt(index);
-    if(character == element){
-        count++;
-        move(str, index+1, element, newString);
-    }else{
-        newString += character;
-        move(str, index+1, element, newString);
     }
-    
+    char currChar = str.charAt(index);
+    subSequences(str, index+1, newString+currChar);
+    subSequences(str, index+1, newString);
 }
-public static void main(String arg[]){
-    String str = "mxoxhxixt";
-    move(str, 0, 'x',"");
+public static void main(String args[]){
+    String str =  "abc";
+    subSequences(str, 0, "");
 }
 }
