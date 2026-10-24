@@ -109,17 +109,35 @@ public class recursion2{
 //     remove(str, 0, "");
 // }
 //----------------------------------------------------------------------------------------------------------------------
-public static void subSequences(String str, int index, String newString){
+// public static void subSequences(String str, int index, String newString){
+//     if(index == str.length()){
+//         System.out.println(newString);
+//         return;
+//     }
+//     char currChar = str.charAt(index);
+//     subSequences(str, index+1, newString+currChar);
+//     subSequences(str, index+1, newString);
+// }
+// public static void main(String args[]){
+//     String str =  "abc";
+//     subSequences(str, 0, "");
+// }
+//----------------------------------------------------------------------------------------------------------------------
+public static String[] keypad = {".", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tu", "vwx", "yz"};
+public static void printCombo(String str, int index, String combination){
     if(index == str.length()){
-        System.out.println(newString);
+        System.out.println(combination);
         return;
     }
     char currChar = str.charAt(index);
-    subSequences(str, index+1, newString+currChar);
-    subSequences(str, index+1, newString);
+    String mapping = keypad[currChar - '0'];
+
+    for(int i=0; i<mapping.length(); i++){
+        printCombo(str, index+1, combination+mapping.charAt(i));
+    }
 }
-public static void main(String args[]){
-    String str =  "abc";
-    subSequences(str, 0, "");
+public static void main (String args[]){
+    String str = "23";
+    printCombo(str, 0, "");
 }
 }
