@@ -20,7 +20,7 @@ class Triangle extends Shape{
         System.out.println(this.color);
     }
 }
-public class oops {
+public class classes {
     public static void main(String args[]){
         Student s1 = new Student();
         s1.name = "mohit";
