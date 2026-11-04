@@ -1,5 +1,11 @@
 class ll {
     Node head;
+    private int size;
+
+    ll(){
+        this.size = 0;
+    }
+
     class Node{
         String data;
         Node next;
@@ -7,6 +13,7 @@ class ll {
         Node(String data){
             this.data = data;
             this.next = null;
+            size++;
         }
     }
 
@@ -55,7 +62,7 @@ class ll {
             System.out.println("There is notihig to delete !!");
             return;
         }
-
+        size--;
         head = head.next;
     }
 
@@ -64,7 +71,7 @@ class ll {
             System.out.println("There is notihig to delete !!");
             return;
         }
-
+        size--;
         if(head.next == null){
             head = null;
             return; 
@@ -79,6 +86,10 @@ class ll {
 
         secondLast.next = null;
     }
+
+    public int getSize(){
+        return size;
+    }
     public static void main(String args[]){
         ll list = new ll();
         list.addFirst("Mohit");
@@ -91,5 +102,7 @@ class ll {
 
         list.deleteLast();
         list.printList();
+
+        System.out.println(list.getSize());
     }
 }
