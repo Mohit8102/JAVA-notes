@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class lList {
+public class ll1 {
     public static void main(){
         LinkedList<String> list = new LinkedList<String>();
         list.add("MOhit");
