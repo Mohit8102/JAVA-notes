@@ -63,6 +63,16 @@ public class ll2 {
         head = prevNode;
     }
 
+    public Node reverseRecursive(Node head) {
+        if(head == null || head.next == null){
+            return head;
+        }
+        Node newHead = reverseRecursive(head.next);
+        head.next.next = head;
+        head.next = null;
+
+        return newHead;
+    } 
     public static void main(String args[]) {
         ll2 list = new ll2();
 
@@ -75,6 +85,9 @@ public class ll2 {
 
         list.reverseIterare();
 
+        list.printList();
+
+        list.head = list.reverseRecursive(list.head);
         list.printList();
     }
 }
