@@ -89,6 +89,16 @@ public class ll2 {
 
         list.head = list.reverseRecursive(list.head);
         list.printList();
-        
+
     }
 }
+
+
+
+
+
+
+
+
+
+
