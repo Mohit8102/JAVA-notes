@@ -14,19 +14,38 @@ public class ll3 {
         list.remove(indexChar);
 
     }
+
+//Check Palindrome
+    static boolean checkPalindrome(LinkedList<Integer> list){
+        if(list.size() == 0){
+            System.out.println("Error !!");
+        }
+        for(int i=0; i<list.size()/2; i++){
+            if(list.get(i) != list.get(list.size()-1-i)){
+                return false;
+            }
+        }
+        return true;
+    }
+
     public static void main (String args[]){
         Scanner sc = new Scanner (System.in);
         LinkedList<Integer> list = new LinkedList<>();
         list.add(1);
         list.add(2);
         list.add(3);
-        list.add(4);
-        list.add(5); 
+        list.add(3);
+        list.add(2);
+        list.add(1);
+         
 
         int n = sc.nextInt();
         
         deleteCharFromLast(list, n);
         System.out.println(list);
+
+        boolean Ans = checkPalindrome(list);
+        System.out.println(Ans);
 
     }
 }
